@@ -1,0 +1,7 @@
+FROM mbentley/buildkit-test:nginx
+
+COPY default /etc/nginx/sites-available/default
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["nginx","-c","/etc/nginx/nginx.conf"]
